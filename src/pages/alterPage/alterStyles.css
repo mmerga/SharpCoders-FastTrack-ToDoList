@@ -1,0 +1,43 @@
+@import url('../../../global.css');
+
+body{
+    width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: whitesmoke;
+    color: #444034;
+}
+
+.todo-form-wrapper{
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.3rem;
+    color: #1f1f1f;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.todo-form-h1{
+    text-align: center;
+    padding-bottom: 2rem;
+    font-weight: bold;
+}
+
+.button-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn{
+    flex-grow: 1;
+    font-weight: bold;
+}
+
+.btn-sm{
+    transform: scale(0.8);
+    font-weight: normal;
+}

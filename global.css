@@ -1,0 +1,97 @@
+*, *::after, *::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scrollbar-width: 2px;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+*::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+* {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    *{
+        scroll-behavior: smooth;
+    }
+}
+
+form{
+    font-size: inherit;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.btn{
+    font-size: inherit;
+}
+
+textarea,
+input[type="time"],
+input[type="date"],
+input[type="email"],
+input[type="text"],
+input[type="password"]
+{
+    font-size: inherit;
+    color: inherit;
+    background-color: inherit;
+    border-width: 3px;
+}
+
+/* 
+    Animista
+*/
+.fade-in-fwd {
+	-webkit-animation: fade-in-fwd 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: fade-in-fwd 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+/* 
+    Animista
+*/
+@-webkit-keyframes fade-in-fwd {
+    0% {
+    -webkit-transform: translateZ(-80px);
+            transform: translateZ(-80px);
+    opacity: 0;
+    }
+    100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+    }
+}
+@keyframes fade-in-fwd {
+    0% {
+    -webkit-transform: translateZ(-80px);
+            transform: translateZ(-80px);
+    opacity: 0;
+    }
+    100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+    }
+}
+
+@media(min-width: 2000px){
+    body{
+        font-size: 40px;
+    }
+    form{
+        font-size: 40px;
+    }
+    nav{
+        font-size: 40px;
+    }
+}
+

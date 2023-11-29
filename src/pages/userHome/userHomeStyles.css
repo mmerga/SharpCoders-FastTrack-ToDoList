@@ -1,0 +1,130 @@
+@import url('../../../global.css');
+
+body{
+    width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: whitesmoke;
+    /* background: radial-gradient(rgba(68,64,52,1) 0%, rgba(225,228,221,1) 100%); */
+    color: #444034;
+}
+
+#main{
+    padding-bottom: 2rem;
+    width: 90%;
+    margin: 0 auto;
+}
+
+header{
+    position: sticky;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    background-color: #1f1f1fb0;
+}
+
+#navbar{
+    width: 90%;
+    margin: 0 auto;
+    padding: 1em 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    color: whitesmoke;
+    flex-wrap: wrap;
+}
+
+.btn-logout{
+    display: inline-block;
+    padding: 0.3em 1.5em;
+    margin-right: 1rem;
+    border: 3px solid whitesmoke;
+    border-radius: 10px;
+    transition: all 300ms ease;
+    cursor: pointer;
+}
+
+.btn-logout:hover,
+.btn-logout:focus{
+    transform: scale(1.05);
+    border: 3px solid green;
+}
+
+.todo-form-wrapper{
+    width: 80%;
+    margin: 0 auto;
+    font-size: 1.3rem;
+    color: #1f1f1f;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.todo-form-h1{
+    text-align: center;
+    padding-bottom: 2rem;
+    font-weight: bold;
+}
+
+.todo-form-wrapper label{
+    font-weight: bold;
+}
+
+.btn{
+    display: block;
+    margin: 0 auto;
+}
+
+.btn-info{
+    font-weight: bolder;
+}
+
+.btn-form{
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.btn-modal{
+    transition: transform 300ms ease;
+}
+.btn-modal:hover,
+.btn-modal:focus{
+    transform: scale(1.05);
+}
+
+#create{
+    font-weight: bold;
+}
+
+#todo-form-description{
+    background-color: inherit;
+    font-size: inherit;
+    resize: none;
+    border-width: 3px;
+}
+
+#todo-form-description:active,
+#todo-form-description:focus{
+    background-color: white;
+}
+
+.todo-done{
+    color: blue !important;
+    font-weight: bold;
+}
+
+.todo-late{
+    color: red !important;
+    font-weight: bold;
+}
+
+.todo-pending{
+    color: green !important;
+    font-weight: bold;
+}
+
+.todo-doing{
+    color: gray !important;
+    font-weight: bold;
+}

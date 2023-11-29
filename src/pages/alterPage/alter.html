@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+			crossorigin="anonymous"
+		/>
+
+		<link rel="icon" href="../../../assets/favicon/to-do-list.ico" />
+
+		<meta name="author" content="Júlio Hebert Silva" />
+
+		<meta name="description" content="Crie sua pripria lista a fazer" />
+
+		<link rel="stylesheet" href="./alterStyles.css" />
+
+		<title>To Do</title>
+	</head>
+	<body class="fade-in-fwd">
+		<main id="main">
+			<section class="todo-form-wrapper">
+				<h1 class="todo-form-h1">Gerenciador de Tarefas</h1>
+				<form id="todo-form" class="row g-2">
+					<div class="col-md-12">
+						<label for="todo-form-tarefa">Nome da Tarefa:</label>
+						<input
+							type="text"
+							class="form-control"
+							id="todo-form-tarefa"
+							placeholder="Tarefa"
+						/>
+					</div>
+					<div class="col-md-6">
+						<label for="todo-form-date-init"> Data Início:</label>
+						<input
+							type="date"
+							class="form-control"
+							id="todo-form-date-init"
+							min="2000-01-01"
+							max="2050-12-31"
+							title="Data início"
+						/>
+					</div>
+					<div class="col-md-6">
+						<label for="todo-form-time-init"> Hora Início:</label>
+						<input
+							type="time"
+							class="form-control"
+							id="todo-form-time-init"
+							title="Hora início"
+						/>
+					</div>
+					<div class="col-md-6">
+						<label for="todo-form-date-end"> Data Término:</label>
+						<input
+							type="date"
+							class="form-control"
+							id="todo-form-date-end"
+							min="2000-01-01"
+							max="2050-12-31"
+							title="Data término"
+						/>
+					</div>
+					<div class="col-md-6">
+						<label for="todo-form-time-end"> Hora Término:</label>
+						<input
+							type="time"
+							class="form-control"
+							id="todo-form-time-end"
+							title="Hora término"
+						/>
+					</div>
+					<div class="col-md-12">
+						<label for="todo-form-description"
+							>Descrição da Tarefa:</label
+						>
+						<textarea
+							class="form-control"
+							id="todo-form-description"
+							rows="4"
+							title="Descrição da Tarefa"
+							placeholder="Descrição..."
+						></textarea>
+					</div>
+					<div class="col-md-12">
+						<div class="button-wrapper">
+							<button
+								id="update"
+								type="button"
+								class="btn btn-primary"
+								title="Atualizar"
+							>
+								Atualizar
+							</button>
+							<button
+								id="delete"
+								type="button"
+								class="btn btn-danger btn-sm"
+								title="Excluir DoubleClick"
+							>
+								Excluir
+							</button>
+							<button
+								id="done"
+								type="button"
+								class="btn btn-success"
+								title="Feito"
+							>
+								Marcar como realizada
+							</button>
+							<button
+								id="cancel"
+								type="button"
+								class="btn btn-secondary"
+								title="Cancelar"
+							>
+								Cancelar
+							</button>
+						</div>
+					</div>
+				</form>
+			</section>
+		</main>
+
+		<script type="module" src="./alterScript.js"></script>
+
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+			crossorigin="anonymous"
+		></script>
+	</body>
+</html>
