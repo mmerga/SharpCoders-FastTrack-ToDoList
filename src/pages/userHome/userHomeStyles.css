@@ -66,13 +66,13 @@ header{
     margin: 0 auto;
     font-size: 1.3rem;
     color: #1f1f1f;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
 }
 
 .todo-form-h1{
     text-align: center;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
     font-weight: bold;
 }
 

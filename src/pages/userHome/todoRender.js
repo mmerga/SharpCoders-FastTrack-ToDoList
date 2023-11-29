@@ -33,7 +33,7 @@ export default function todoRender(todo, index){
 
     const statusTd = document.createElement('td');;
     if(status === 'true'){
-        statusTd.textContent = 'Ralizada';
+        statusTd.textContent = 'Realizada';
         statusTd.setAttribute('class', 'todo-done');
     }else{
         let compare = compareD(dateInit, timeInit, dateEnd, timeEnd);

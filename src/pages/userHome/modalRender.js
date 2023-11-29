@@ -20,7 +20,7 @@ export function modal(tarefa, description, index){
 
     // Modal Dialog Div
     const dialogDiv = document.createElement('div');
-    dialogDiv.setAttribute('class','modal-dialog modal-dialog-centered');
+    dialogDiv.setAttribute('class','modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable');
 
     // Modal Content Div
     const contentDiv = document.createElement('div');
