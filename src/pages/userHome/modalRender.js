@@ -1,6 +1,6 @@
 "use strict";
 
-
+// Takes all infos needed for do some modal for current to do
 export function modal(tarefa, description, index){
     const td = document.createElement('td');
 

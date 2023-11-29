@@ -2,15 +2,18 @@
 
 import {deleteCurrentUser} from '../../services/localStorage/localStorage.js'
 
+// Go to Home Page
 function redirectToHome(){
     window.location = '../home/home.html';
 }
 
+// Deal with when user wants to log out
 function handleLogOut(e){
     deleteCurrentUser();
     redirectToHome();
 }
 
+// Render a navbar, where whites his names with a message, and render a log out button.
 export function handleNavBar(nome){
     const nav = document.getElementById('navbar');
 

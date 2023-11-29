@@ -3,6 +3,7 @@
 import {getListToDoUsers, setListToDoUsers, setCurrentUser} from '../../services/localStorage/localStorage.js'
 import {loginUser, newUser} from '../../services/user/user.js'
 
+// Deal with log in form
 function login(e){
     e.preventDefault();
 
@@ -18,6 +19,7 @@ function login(e){
     }
 }
 
+// Deal with sign in form
 function signin(e){
     e.preventDefault();
 
@@ -33,10 +35,12 @@ function signin(e){
     }
 }
 
+// Go to user home page
 function redirectToUserHome(){
     window.location = '../userHome/userHome.html'
  }
 
+// Wait until pages full loads, then do something
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById("login").addEventListener("submit", login);
     document.getElementById("signin").addEventListener("submit", signin);

@@ -7,6 +7,7 @@ import {handleNavBar} from './navbarHandler.js'
 let userIndex = 0;
 let todoIndex = 0;
 
+// Create a new to do and saves on user db
 function newToDo(e){
     e.preventDefault()
     
@@ -34,6 +35,7 @@ function newToDo(e){
     document.getElementById('todo-form').reset();
 }
 
+// When pages loads, get current user and render his to do list
 function onLoad(){
     const aux = findUser();
     const user = aux[0];
@@ -46,6 +48,7 @@ function onLoad(){
     handleNavBar(aux[2]);
 }
 
+// wait until pages full loads, when do something
 document.addEventListener('DOMContentLoaded', function () {
     onLoad();
     document.getElementById("todo-form").addEventListener("submit", newToDo);

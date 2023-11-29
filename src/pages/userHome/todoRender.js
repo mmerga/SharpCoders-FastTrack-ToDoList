@@ -4,15 +4,18 @@ import {fixDay, compareD} from '../../services/comparingDates/dates.js'
 import {setAlterToDo} from '../../services/localStorage/localStorage.js';
 import {modal} from './modalRender.js';
 
+// when user clicks on "Alterar" button, he is allowed to update his to do
 function handleAlter(e){
     setAlterToDo([e.target.dataset.todoIndex, e.target.dataset.todoStatus]);
     redirectToAlterPage();
 }
 
+// Go To Alter Page, where user can update his to do
 function redirectToAlterPage(){
     window.location = '../alterPage/alter.html'
 }
 
+// Just a to do render, take all infos of this to do, and render as line in a table.
 export default function todoRender(todo, index){
     const {tarefa, dateInit, timeInit, dateEnd, timeEnd, description, status} = todo;
 

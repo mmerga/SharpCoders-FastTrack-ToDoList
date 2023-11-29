@@ -11,16 +11,21 @@ aux = findUser();
 const user = aux[0];
 const userIndex = aux[1];
 
+// Go to user home page
 function redirectToUserHome(){
     window.location = '../userHome/userHome.html';
     deleteAlterToDo();
 }
 
+// Update user to do list on bd
 function updateListToDo(){
     USERS[userIndex] = user;
     setListToDoUsers(USERS);
 }
 
+// Get elements on DOM
+// if flag TRUE, return html element
+// if flag FALSE, return his value
 function getElements(flag = true){
     const tarefa = document.getElementById("todo-form-tarefa");
     const dateInit = document.getElementById("todo-form-date-init");
@@ -49,6 +54,7 @@ function getElements(flag = true){
     }
 }
 
+// Deal with when user updates his to do
 function handleSubmit(e){
     e.preventDefault();
     const {
@@ -75,12 +81,16 @@ function handleSubmit(e){
     redirectToUserHome();
 }
 
+// Deal with when user wants to delete his to do
 function handleDelete(e){
     user.todoList.splice(TODO_INDEX, 1)
     updateListToDo();
     redirectToUserHome();
 }
 
+// Deal with when user wants change state of his to do
+// From done to not done
+// From not done to done
 function handleDone(e){
     const {
         tarefa,
@@ -106,10 +116,12 @@ function handleDone(e){
     redirectToUserHome();
 }
 
+// Deal when user wants to cancel update on to do
 function handleCancel(e){
     redirectToUserHome();
 }
 
+// Put to do infos on form, so user can see, and add events on buttons, so user can do what he wants
 function alter(){    
     const currentToDo = user?.todoList[TODO_INDEX];
 
@@ -148,7 +160,7 @@ function alter(){
     cancelButtom.addEventListener('click', handleCancel);
 }
 
+// Wait  until pages full loads, when do somethin
 document.addEventListener('DOMContentLoaded', function () {
-
     alter();
 });

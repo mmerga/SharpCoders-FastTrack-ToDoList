@@ -1,11 +1,17 @@
 "use strict";
 
+// Fix some bug where when create a new date, a day cames 1 day before.
+// I do not know what is doing this
 export function fixDay(date){
     const newDate = new Date(date);
     newDate.setDate(newDate.getDate() + 1);
     return newDate;
 }
 
+// Compare if the task is late, doing, or pending with current day of system.
+// return 1 if is on doing
+// return -1 if is pending
+// return 0 if is late
 export function compareD(dateInit, timeInit, dateEnd, timeEnd){
     let temp = dateInit.split('-');
     let year = temp[0];
