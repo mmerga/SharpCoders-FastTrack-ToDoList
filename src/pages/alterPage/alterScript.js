@@ -50,6 +50,7 @@ function getElements(flag = true){
 }
 
 function handleSubmit(e){
+    e.preventDefault();
     const {
         tarefa,
         dateInit,
@@ -142,7 +143,7 @@ function alter(){
     const cancelButtom = document.getElementById('cancel');
 
     submitButton.addEventListener('click', handleSubmit);
-    deleteButton.addEventListener('dblclick', handleDelete);
+    deleteButton.addEventListener('click', handleDelete);
     doneButton.addEventListener('click', handleDone);
     cancelButtom.addEventListener('click', handleCancel);
 }

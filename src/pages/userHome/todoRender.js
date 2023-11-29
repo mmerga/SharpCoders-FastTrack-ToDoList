@@ -48,45 +48,6 @@ export default function todoRender(todo, index){
             statusTd.textContent = 'Pendente';
             statusTd.setAttribute('class', 'todo-pending');
         }
-
-        // // Atrasada
-        // if(compare === -1){
-        //     statusTd.textContent = 'Atrasada';
-        //     statusTd.setAttribute('class', 'todo-late');
-        // }
-        // // Pendente
-        // else if(compare === 1){
-        //     compare = compareDate(dateInit);
-        //     if(compare === -1){
-        //         statusTd.textContent = 'Em andamento';
-        //         statusTd.setAttribute('class', 'todo-doing');
-        //     }else{
-        //         statusTd.textContent = 'Pendente';
-        //         statusTd.setAttribute('class', 'todo-pending');
-        //     }
-        // }
-        // // Andamento ou Atrasada ou Pendente
-        // // Necessida comparar as horas e minutos
-        // else if(compare === 0){
-        //     compare = compareTime(timeInit)
-        //     // Pendente
-        //     if(compare === 1){
-        //         statusTd.textContent = 'Pendente';
-        //         statusTd.setAttribute('class', 'todo-pending');
-        //     }else{
-        //         compare = compareTime(timeEnd);
-        //         // Em Andamento
-        //         if(compare === 1){
-        //             statusTd.textContent = 'Em andamento';
-        //             statusTd.setAttribute('class', 'todo-doing');
-        //         }
-        //         // Atrasado
-        //         else{
-        //             statusTd.textContent = 'Atrasada';
-        //             statusTd.setAttribute('class', 'todo-late');
-        //         }
-        //     }
-        // }
     }
 
     const alterTd = document.createElement('td');
