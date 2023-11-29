@@ -8,6 +8,18 @@ body{
     color: #444034;
 }
 
+textarea{
+    resize: none;
+    font-size: inherit;
+}
+
+#todo-form-description{
+    background-color: inherit;
+    font-size: inherit;
+    resize: none;
+    border-width: 3px;
+}
+
 .todo-form-wrapper{
     width: 80%;
     max-width: 800px;
@@ -40,4 +52,10 @@ body{
 .btn-sm{
     transform: scale(0.8);
     font-weight: normal;
+}
+
+@media(max-width: 768px){
+    .btn{
+        width: 100%;
+    }
 }

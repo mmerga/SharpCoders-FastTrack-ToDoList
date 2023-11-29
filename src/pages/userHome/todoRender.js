@@ -1,8 +1,8 @@
 "use strict";
 
 import {fixDay, compareD} from '../../services/comparingDates/dates.js'
-import { setAlterToDo} from '../../services/localStorage/localStorage.js';
-import modal from './modalRender.js';
+import {setAlterToDo} from '../../services/localStorage/localStorage.js';
+import {modal} from './modalRender.js';
 
 function handleAlter(e){
     setAlterToDo([e.target.dataset.todoIndex, e.target.dataset.todoStatus]);
@@ -29,7 +29,7 @@ export default function todoRender(todo, index){
     dateEndTd.textContent = newDateEnd.toLocaleDateString() +' '+ timeEnd;
 
     const statusTd = document.createElement('td');;
-    if(status == 'true'){
+    if(status === 'true'){
         statusTd.textContent = 'Ralizada';
         statusTd.setAttribute('class', 'todo-done');
     }else{

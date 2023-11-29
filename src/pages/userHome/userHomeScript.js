@@ -5,7 +5,7 @@ import todoRender from './todoRender.js';
 import {handleNavBar} from './navbarHandler.js'
 
 let userIndex = 0;
-let todoIndex = -1;
+let todoIndex = 0;
 
 function newToDo(e){
     e.preventDefault()
@@ -27,7 +27,7 @@ function newToDo(e){
         status: 'false'
     }
 
-    todoRender(todo, ++todoIndex);
+    todoRender(todo, todoIndex++);
 
     saveNewToDo(todo);
 

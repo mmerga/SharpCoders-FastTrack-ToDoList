@@ -2,10 +2,10 @@
 
 body{
     width: 100vw;
+    height: 100vh;
     min-height: 100vh;
     overflow-x: hidden;
     background: whitesmoke;
-    /* background: radial-gradient(rgba(68,64,52,1) 0%, rgba(225,228,221,1) 100%); */
     color: #444034;
 }
 
@@ -26,13 +26,23 @@ header{
 #navbar{
     width: 90%;
     margin: 0 auto;
-    padding: 1em 0;
+    padding: 0.5em 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-weight: bold;
     color: whitesmoke;
     flex-wrap: wrap;
+}
+
+.nav-left p{
+    margin: 0;
+    padding: 0;
+}
+
+.nav-left,
+.btn-logout{
+    font-weight: bold;
 }
 
 .btn-logout{
@@ -87,6 +97,7 @@ header{
 
 .btn-modal{
     transition: transform 300ms ease;
+    font-weight: 500;
 }
 .btn-modal:hover,
 .btn-modal:focus{
@@ -109,6 +120,16 @@ header{
     background-color: white;
 }
 
+.todo-table-wrapper{
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.todo-table-wrapper th:nth-of-type(1),
+.todo-table-wrapper td:nth-of-type(1){
+    text-align: left;
+}
+
 .todo-done{
     color: blue !important;
     font-weight: bold;
@@ -127,4 +148,10 @@ header{
 .todo-doing{
     color: gray !important;
     font-weight: bold;
+}
+
+@media(max-width: 768px){
+    .btn-primary{
+        width: 100%;
+    }
 }

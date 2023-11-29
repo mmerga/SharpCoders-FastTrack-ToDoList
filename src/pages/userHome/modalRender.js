@@ -1,7 +1,7 @@
 "use strict";
 
 
-export default function modal(tarefa, description, index){
+export function modal(tarefa, description, index){
     const td = document.createElement('td');
 
     const button = document.createElement('button');

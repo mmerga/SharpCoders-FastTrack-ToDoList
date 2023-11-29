@@ -8,7 +8,7 @@ function redirectToHome(){
 
 function handleLogOut(e){
     deleteCurrentUser();
-    redirectToHome()
+    redirectToHome();
 }
 
 export function handleNavBar(nome){
@@ -16,7 +16,9 @@ export function handleNavBar(nome){
 
     const navLeft = document.createElement('div');
     navLeft.setAttribute('class', 'nav-left');
-    navLeft.textContent = 'Bem vindo, ' + nome[0].toUpperCase() + nome.slice(1); + '!'
+    const pLeft = document.createElement('p');
+    pLeft.textContent = 'Bem vindo, ' + nome[0].toUpperCase() + nome.slice(1) + '!';
+    navLeft.appendChild(pLeft);
 
     const navRight = document.createElement('div');
     navRight.setAttribute('class', 'nav-rigth');

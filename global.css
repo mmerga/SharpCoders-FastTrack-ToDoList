@@ -84,14 +84,17 @@ input[type="password"]
 }
 
 @media(min-width: 2000px){
-    body{
-        font-size: 40px;
-    }
-    form{
-        font-size: 40px;
-    }
+    body, 
+    textarea,
+    form,
     nav{
         font-size: 40px;
+    }
+    h1{
+        font-size: 4rem;
+    }
+    .table{
+        font-size: 2rem;
     }
 }
 
