@@ -59,7 +59,7 @@ function onLoad(){
     });
 
     popUpRender(getFlag());
-    // deleteFlag();
+    deleteFlag();
 
     handleNavBar(aux[2]);
 }
