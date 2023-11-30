@@ -18,8 +18,8 @@ body{
     padding: 0.7rem 1.5rem;
     border: 1px solid #1f1f1f;
     border-radius: 10px;
-    background-color: #444034e6;
-    color: whitesmoke;
+    background-color: var(--yellow);
+    color: var(--black);
     font-weight: bold;
 }
 
@@ -143,26 +143,6 @@ header{
 .todo-table-wrapper th:nth-of-type(1),
 .todo-table-wrapper td:nth-of-type(1){
     text-align: left;
-}
-
-.todo-done{
-    color: blue !important;
-    font-weight: bold;
-}
-
-.todo-late{
-    color: red !important;
-    font-weight: bold;
-}
-
-.todo-pending{
-    color: green !important;
-    font-weight: bold;
-}
-
-.todo-doing{
-    color: gray !important;
-    font-weight: bold;
 }
 
 @media(max-width: 768px){

@@ -7,6 +7,7 @@ const USERS = getListToDoUsers();
 let aux = getAlterToDo();
 const TODO_INDEX = aux[0];
 const TODO_STATUS = aux[1];
+const TODO_NEW_STATUS = aux[2];
 aux = findUser();
 const user = aux[0];
 const userIndex = aux[1];
@@ -73,7 +74,7 @@ function handleSubmit(e){
         dateEnd, 
         timeEnd, 
         description,
-        status: false
+        status: TODO_STATUS
     }
     user.todoList[TODO_INDEX] = newTodo;
     updateListToDo();
@@ -148,12 +149,25 @@ function alter(){
     timeEnd.value = currentToDo.timeEnd;
     description.value = currentToDo.description;
 
-    if(TODO_STATUS == 'true'){
+    const p = document.getElementById('todo-status');
+
+    if(TODO_STATUS === 'true'){
         const statusButton = document.getElementById('done');
         statusButton.textContent = 'Marcar como NÃO realizada';
         statusButton.classList.remove('btn-success');
         statusButton.classList.add('btn-warning');
-
+        p.textContent = 'Tarefa realizada';
+        p.classList.add('todo-done');
+    }
+    else{
+        p.textContent = 'Tarefa '+ TODO_NEW_STATUS.toLowerCase();
+        if(TODO_NEW_STATUS === 'Em andamento'){
+            p.classList.add('todo-doing');
+        }else if(TODO_NEW_STATUS === 'Atrasada'){
+            p.classList.add('todo-late');
+        }else if(TODO_NEW_STATUS === 'Pendente'){
+            p.classList.add('todo-pending');
+        }
     }
 
     const submitButton = document.getElementById('update');

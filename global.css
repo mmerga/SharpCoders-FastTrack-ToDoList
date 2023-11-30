@@ -10,6 +10,7 @@
     --white: #ffffff;
     --gren: #2c6e49;
     --black: #1f1f1f;
+    --yellow: #f5b700;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -81,13 +82,13 @@ input[type="password"]
 }
 @keyframes fade-in-fwd {
     0% {
-    -webkit-transform: translateZ(-80px);
-            transform: translateZ(-80px);
+/*     -webkit-transform: translateZ(-80px);    // Bug Modal
+            transform: translateZ(-80px); */
     opacity: 0;
     }
     100% {
-    -webkit-transform: translateZ(0);
-            transform: translateZ(0);
+/*     -webkit-transform: translateZ(0);        // Bug Modal
+            transform: translateZ(0); */
     opacity: 1;
     }
 }
@@ -125,3 +126,22 @@ input[type="password"]
     }
 }
 
+.todo-done{
+    color: blue !important;
+    font-weight: bold;
+}
+
+.todo-late{
+    color: red !important;
+    font-weight: bold;
+}
+
+.todo-pending{
+    color: green !important;
+    font-weight: bold;
+}
+
+.todo-doing{
+    color: gray !important;
+    font-weight: bold;
+}
