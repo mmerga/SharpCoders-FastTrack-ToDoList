@@ -1,6 +1,6 @@
 "use strict";
 
-import {getListToDoUsers, setListToDoUsers, setCurrentUser} from '../../services/localStorage/localStorage.js'
+import {getListToDoUsers, setListToDoUsers, setCurrentUser, setFlag} from '../../services/localStorage/localStorage.js'
 import {loginUser, newUser} from '../../services/user/user.js'
 
 // Deal with log in form
@@ -13,6 +13,7 @@ function login(e){
     const isUser = loginUser(USERS, {email, password});
     if(isUser){
         setCurrentUser(email);
+        setFlag('4');
         redirectToUserHome();
     }else{
         window.alert("Email ou senha incorreta.")
@@ -31,6 +32,7 @@ function signin(e){
     if(isUser){
         setListToDoUsers(USERS);
         setCurrentUser(email);
+        setFlag('0');
         redirectToUserHome();
     }
 }

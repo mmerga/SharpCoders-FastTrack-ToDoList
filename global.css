@@ -4,16 +4,13 @@
     box-sizing: border-box;
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
-/* *::-webkit-scrollbar {
-    display: none;
-} */
-
-/* Hide scrollbar for IE, Edge and Firefox */
-/* * {
-    -ms-overflow-style: none;  
-    scrollbar-width: none;  
-} */
+:root{
+    --blue: #003459;
+    --lightBlue: #00a7e1;
+    --white: #ffffff;
+    --gren: #2c6e49;
+    --black: #1f1f1f;
+}
 
 @media (prefers-reduced-motion: no-preference) {
     *{
@@ -33,6 +30,15 @@ body{
     font-size: inherit;
 }
 
+*::placeholder {
+    color: inherit !important;
+    opacity: 1; /* Firefox */
+}
+
+*::-ms-input-placeholder { /* Edge 12 -18 */
+    color: inherit !important;
+}
+
 textarea,
 input[type="time"],
 input[type="date"],
@@ -40,9 +46,9 @@ input[type="email"],
 input[type="text"],
 input[type="password"]
 {
-    font-size: inherit;
-    color: inherit;
-    background-color: inherit;
+    font-size: inherit !important;
+    color: inherit !important; 
+    background-color: inherit !important;
     border-width: 3px;
 }
 
@@ -52,6 +58,10 @@ input[type="password"]
 .fade-in-fwd {
 	-webkit-animation: fade-in-fwd 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 	        animation: fade-in-fwd 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+.fade-out {
+	-webkit-animation: fade-out 1s ease-out both;
+	        animation: fade-out 1s ease-out both;
 }
 
 /* 
@@ -81,6 +91,24 @@ input[type="password"]
     opacity: 1;
     }
 }
+
+ @-webkit-keyframes fade-out {
+    0% {
+    opacity: 1;
+    }
+    100% {
+    opacity: 0;
+    }
+}
+@keyframes fade-out {
+    0% {
+    opacity: 1;
+    }
+    100% {
+    opacity: 0;
+    }
+}
+
 
 @media(min-width: 2000px){
     body, 

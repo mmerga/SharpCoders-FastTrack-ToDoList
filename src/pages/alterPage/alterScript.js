@@ -1,6 +1,6 @@
 "use strict";
 
-import {getAlterToDo, getListToDoUsers, setListToDoUsers, deleteAlterToDo} from '../../services/localStorage/localStorage.js';
+import {getAlterToDo, getListToDoUsers, setListToDoUsers, deleteAlterToDo, setFlag} from '../../services/localStorage/localStorage.js';
 import {findUser} from '../../services/user/user.js'
 
 const USERS = getListToDoUsers();
@@ -78,14 +78,19 @@ function handleSubmit(e){
     user.todoList[TODO_INDEX] = newTodo;
     updateListToDo();
 
+    setFlag('2');
     redirectToUserHome();
 }
 
 // Deal with when user wants to delete his to do
 function handleDelete(e){
-    user.todoList.splice(TODO_INDEX, 1)
-    updateListToDo();
-    redirectToUserHome();
+    const isSure = window.confirm("Deseja realmente excluir a tarefa?");
+    if(isSure){
+        user.todoList.splice(TODO_INDEX, 1)
+        updateListToDo();
+        setFlag('3');
+        redirectToUserHome();
+    }
 }
 
 // Deal with when user wants change state of his to do
@@ -108,16 +113,18 @@ function handleDone(e){
         dateEnd, 
         timeEnd, 
         description,
-        status: TODO_STATUS == 'false' ? 'true' : 'false'
+        status: TODO_STATUS === 'false' ? 'true' : 'false'
     }
     user.todoList[TODO_INDEX] = newTodo;
     updateListToDo();
 
+    setFlag('2');
     redirectToUserHome();
 }
 
 // Deal when user wants to cancel update on to do
 function handleCancel(e){
+    setFlag('4');
     redirectToUserHome();
 }
 

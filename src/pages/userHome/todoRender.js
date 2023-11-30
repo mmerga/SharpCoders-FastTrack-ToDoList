@@ -16,7 +16,7 @@ function redirectToAlterPage(){
 }
 
 // Just a to do render, take all infos of this to do, and render as line in a table.
-export default function todoRender(todo, index){
+export function todoRender(todo, index){
     const {tarefa, dateInit, timeInit, dateEnd, timeEnd, description, status} = todo;
 
     const tr = document.createElement('tr');

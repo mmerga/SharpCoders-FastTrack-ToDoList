@@ -1,11 +1,20 @@
 "use strict";
 
 import {findUser, saveNewToDo} from '../../services/user/user.js';
-import todoRender from './todoRender.js';
-import {handleNavBar} from './navbarHandler.js'
+import {getFlag, deleteFlag} from '../../services/localStorage/localStorage.js'
+import {todoRender} from './todoRender.js';
+import {handleNavBar} from './navbarHandler.js';
+import {popUpRender} from './popUpRender.js';
+
 
 let userIndex = 0;
 let todoIndex = 0;
+
+// Make the vp goto top
+function scrollToTop() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
 
 // Create a new to do and saves on user db
 function newToDo(e){
@@ -33,6 +42,10 @@ function newToDo(e){
     saveNewToDo(todo);
 
     document.getElementById('todo-form').reset();
+
+    scrollToTop();
+
+    popUpRender('1');
 }
 
 // When pages loads, get current user and render his to do list
@@ -44,6 +57,9 @@ function onLoad(){
         todoRender(item, index);
         todoIndex = index;
     });
+
+    popUpRender(getFlag());
+    // deleteFlag();
 
     handleNavBar(aux[2]);
 }

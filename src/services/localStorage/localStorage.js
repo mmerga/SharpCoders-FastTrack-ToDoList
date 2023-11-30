@@ -17,7 +17,7 @@ export function getListToDoUsers(){
             return [];
         }
     }catch(e){
-        window.alert("Fail to getListUsers, something went wrong");
+        window.alert("Fail to get users, something went wrong");
         console.log({e: e.message});
         return [];
     }
@@ -28,7 +28,7 @@ export function setListToDoUsers(users){
         deleteListToDoUsers()
         local.setItem('todo-users', JSON.stringify(users));
     }catch(e){
-        window.alert('Fail to save, something went wrong.')
+        window.alert('Fail to save user, something went wrong.')
         console.log({e: e.message});
     }
 }
@@ -52,7 +52,7 @@ export function getCurrentUser(){
             return false;
         }
     }catch(e){
-        window.alert("Fail to current user, something went wrong");
+        window.alert("Fail to get email, something went wrong");
         console.log({e: e.message});
         return false;
     }
@@ -63,7 +63,7 @@ export function setCurrentUser(email){
         deleteCurrentUser();
         local.setItem('todo-current-user', JSON.stringify(email));
     }catch(e){
-        window.alert('Fail to save, something went wrong.')
+        window.alert('Fail to save email, something went wrong.')
         console.log({e: e.message});
     }
 }
@@ -87,7 +87,7 @@ export function getAlterToDo(){
             return false;
         }
     }catch(e){
-        window.alert("Fail to current user, something went wrong");
+        window.alert("Fail to get info, something went wrong");
         console.log({e: e.message});
         return false;
     }
@@ -98,13 +98,48 @@ export function setAlterToDo(info){
         deleteAlterToDo();
         local.setItem('todo-alter-todo', JSON.stringify(info));
     }catch(e){
-        window.alert('Fail to save, something went wrong.')
+        window.alert('Fail to save info, something went wrong.')
         console.log({e: e.message});
     }
 }
 
 export function deleteAlterToDo(){
     local.removeItem('todo-alter-todo');
+}
+
+/* 
+==================================
+FLAG STATUS
+==================================
+*/
+
+export function getFlag(){
+    try{
+        const flag = JSON.parse(local.getItem('todo-flag'));
+        if (flag){
+            return  flag;
+        }else{
+            return false;
+        }
+    }catch(e){
+        window.alert("Fail to get flag, something went wrong");
+        console.log({e: e.message});
+        return false;
+    }
+}
+
+export function setFlag(flag){
+    try{
+        deleteAlterToDo();
+        local.setItem('todo-flag', JSON.stringify(flag));
+    }catch(e){
+        window.alert('Fail to save flag, something went wrong.')
+        console.log({e: e.message});
+    }
+}
+
+export function deleteFlag(){
+    local.removeItem('todo-flag');
 }
 
 /* 
@@ -118,5 +153,6 @@ export function deleteAll(areYourSure = false){
         deleteAlterToDo();
         deleteCurrentUser();
         deleteListToDoUsers();
+        deleteFlag();
     }
 }
