@@ -13,7 +13,7 @@
 
 body{
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     overflow-x: hidden;
     background: var(--blue);
     background: -webkit-linear-gradient(to bottom, var(--blue) , var(--lightBlue) );
@@ -24,28 +24,32 @@ body{
 
 #main{
     width: 90%;
-    min-height: 90%;
-    margin:  1rem auto 0 ;
+    /* height: 90%; */
+    padding: 5% 0;
+    margin: 0 auto;
     display: flex;
     gap: 2rem;
 }
 
 .main-left{
     width: 60%;
-    min-height: 100%;
+    height: 100%;
     margin: auto;
+    /* overflow: hidden; */
 }
 
 .img-wrapper{
     width: 100%;
     min-height: 100%;
     margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .img-wrapper img{
     width: 100%;
-    /* min-height: 100%; */
-    display: block;
+    display: inline-block;
     margin: auto;
     object-fit: contain;
     border-radius: 10px;
@@ -63,16 +67,37 @@ body{
 }
 
 @media(max-width: 768px){
+    body{
+        background: url('../../../assets/images/todo-homepage.jpg') no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        text-shadow: 0 1px 1px black;
+    }
+
+    input[type="email"]:active,
+    input[type="email"]:focus,
+    input[type="email"]:hover,
+    input[type="text"]:active,
+    input[type="text"]:focus,
+    input[type="text"]:hover,
+    input[type="password"]:active,
+    input[type="password"]:focus,
+    input[type="password"]:hover{
+        background-color: var(--blue) !important;
+        color: var(--white) !important
+    }
+
     #main{
-        flex-wrap: wrap;
+        display: block;
     }
 
     #main section{
         flex-grow: 1;
     }
     .main-left{
-        height: 40vh;
-        min-height: fit-content;
+        display: none;
     }
     .main-rigth{
         width: 100%;
