@@ -18,6 +18,8 @@ export function popUpRender(flag){
         text = 'Tarefa Excluida.'
     }else if(flag === '4'){
         text = 'Bem vindo de volta.'
+    }else{
+        return;
     }
 
     const div = document.createElement('div');
