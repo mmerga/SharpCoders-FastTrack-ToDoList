@@ -85,13 +85,40 @@ function handleSubmit(e){
 
 // Deal with when user wants to delete his to do
 function handleDelete(e){
-    const isSure = window.confirm("Deseja realmente excluir a tarefa?");
-    if(isSure){
-        user.todoList.splice(TODO_INDEX, 1)
-        updateListToDo();
-        setFlag('3');
-        redirectToUserHome();
-    }
+    isSureRender()
+}
+
+// Render a 'alert' to ask user if he wants for sure delete the task
+function isSureRender(){
+    const div = document.createElement('div');
+    div.innerHTML = `
+        <p>Deseja realmente excluir a tarefa?</p>
+        <div class='is-sure-buttons'>
+            <button type="button" class="btn btn-danger" id='is-sure'>Sim</button>
+            <button type="button" class="btn btn-secondary" id='is-not-sure'>Não</button>
+        </div>
+    `;
+    div.classList.add('is-sure');
+    div.classList.add('alert');
+    div.classList.add('alert-danger');
+    div.setAttribute('id', 'div-is-sure');
+    document.querySelector('html').appendChild(div);
+
+    document.getElementById('is-sure').addEventListener('click', isSure);
+    document.getElementById('is-not-sure').addEventListener('click', isNotSure);
+}
+
+// User realy wants delete the task
+function isSure(){
+    user.todoList.splice(TODO_INDEX, 1)
+    updateListToDo();
+    setFlag('3');
+    redirectToUserHome();
+}
+
+// User do not want delete the task
+function isNotSure(){
+    document.getElementById('div-is-sure').remove();
 }
 
 // Deal with when user wants change state of his to do
@@ -151,22 +178,28 @@ function alter(){
 
     const p = document.getElementById('todo-status');
 
+    const statusMessage = document.getElementById('todo-status-message');
+
     if(TODO_STATUS === 'true'){
         const statusButton = document.getElementById('done');
         statusButton.textContent = 'Marcar como NÃO realizada';
         statusButton.classList.remove('btn-success');
         statusButton.classList.add('btn-warning');
-        p.textContent = 'Tarefa realizada';
+        p.textContent = ' Tarefa realizada';
         p.classList.add('todo-done');
+        statusMessage.classList.add('alert-primary');
     }
     else{
-        p.textContent = 'Tarefa '+ TODO_NEW_STATUS.toLowerCase();
+        p.textContent = ' Tarefa '+ TODO_NEW_STATUS.toLowerCase();
         if(TODO_NEW_STATUS === 'Em andamento'){
             p.classList.add('todo-doing');
+            statusMessage.classList.add('alert-light');
         }else if(TODO_NEW_STATUS === 'Atrasada'){
             p.classList.add('todo-late');
+            statusMessage.classList.add('alert-danger');
         }else if(TODO_NEW_STATUS === 'Pendente'){
             p.classList.add('todo-pending');
+            statusMessage.classList.add('alert-success');
         }
     }
 

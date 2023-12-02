@@ -12,6 +12,14 @@
 			crossorigin="anonymous"
 		/>
 
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+			integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+
 		<link rel="icon" href="../../../assets/favicon/to-do-list.ico" />
 
 		<meta name="author" content="Júlio Hebert Silva" />
@@ -26,7 +34,12 @@
 		<main id="main">
 			<section class="todo-form-wrapper">
 				<h1 class="todo-form-h1">Gerenciador de Tarefas</h1>
-				<p id="todo-status"></p>
+				<div id="todo-status-message" class="alert" role="alert">
+					<span>
+						<i class="fa-solid fa-circle-exclamation"></i
+						><span id="todo-status"></span>
+					</span>
+				</div>
 				<form id="todo-form" class="row g-2">
 					<div class="col-md-12">
 						<label for="todo-form-tarefa">Nome da Tarefa:</label>
@@ -108,7 +121,7 @@
 							<button
 								id="delete"
 								type="button"
-								class="btn btn-danger btn-sm"
+								class="btn btn-danger"
 								title="Excluir DoubleClick"
 							>
 								Excluir

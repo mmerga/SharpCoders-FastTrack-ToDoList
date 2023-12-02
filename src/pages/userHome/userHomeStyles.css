@@ -14,13 +14,17 @@ body{
 .popup{
     position: fixed;
     top: 4rem;
-    left: 2rem;
-    padding: 0.7rem 1.5rem;
+    left: 10vw;
+    width: 80vw;
+    /* padding: 0.7rem 1.5rem;
     border: 1px solid #1f1f1f;
     border-radius: 10px;
     background-color: var(--yellow);
-    color: var(--black);
+    color: var(--black); */
+    font-size: 1.3rem;
     font-weight: bold;
+    text-align: center;
+    z-index: 999;
 }
 
 #main{

@@ -66,6 +66,25 @@ body{
     letter-spacing: 1px;
 }
 
+.hidden{
+    display: none !important;
+}
+
+.invalid{
+    border-color: red !important;
+}
+
+.invalid-message{
+    color: red;
+    text-shadow: none;
+}
+
+.warning-message{
+    color: yellowgreen;
+    text-shadow: none;
+
+}
+
 @media(max-width: 768px){
     body{
         background: url('../../../assets/images/todo-homepage.jpg') no-repeat center center fixed; 

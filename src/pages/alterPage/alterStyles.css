@@ -31,18 +31,36 @@ textarea{
     padding-bottom: 5rem;
 }
 
+.is-sure{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: fit-content;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 1rem 2rem;
+    text-wrap: balance;
+}
+
+.is-sure-buttons{
+    display: flex;
+    flex-grow: 1;
+    gap: 1em;
+}
+
+#todo-status-message{
+    text-align: center;
+    font-size: 1.8rem;
+    text-shadow: 0 0 1px black;
+    letter-spacing: 1px;
+}
+
 .todo-form-h1{
     text-align: center;
     padding-bottom: 1rem;
     font-weight: bold;
-}
-
-#todo-status{
-    text-align: center;
-    margin: 0;
-    font-size: 1.8rem;
-    text-shadow: 0 0 1px black;
-    letter-spacing: 1px;
 }
 
 .button-wrapper{

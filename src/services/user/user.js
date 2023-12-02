@@ -35,8 +35,7 @@ export function newUser(users, newU){
     const {name, email, password} = newU;
     try{
         if(hasUser(users, email)){
-            // Exist emal on bd
-            window.alert("Email ja registrado, por favor tente outro.")
+            // Existe email on bd
             return false;
         }else{
             users.push({

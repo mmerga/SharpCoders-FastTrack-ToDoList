@@ -7,23 +7,32 @@
 // flag = 3 to do deleted
 // flag = 4 user log in
 export function popUpRender(flag){
+    const div = document.createElement('div');
+
     let text = '';
     if(flag === '0'){
         text = 'Conta criada com sucesso!'
+        div.classList.add('alert-success');
     }else if(flag === '1'){
         text = 'Tarefa criada com sucesso!'
+        div.classList.add('alert-success');
     }else if(flag === '2'){
-        text = 'Tarefa atualizada.'
+        text = 'Tarefa atualizada!'
+        div.classList.add('alert-warning');
     }else if(flag === '3'){
-        text = 'Tarefa Excluida.'
+        text = 'Tarefa Excluida!'
+        div.classList.add('alert-danger');
     }else if(flag === '4'){
-        text = 'Bem vindo de volta.'
+        text = 'Bem vindo de volta!'
+        div.classList.add('alert-info');
     }else{
         return;
     }
 
-    const div = document.createElement('div');
     div.classList.add('popup');
+    div.classList.add('alert');
+    div.classList.add('fade-in-fwd');
+    div.setAttribute('role', 'alert')
     div.textContent = text;
 
     document.querySelector('body').appendChild(div);
