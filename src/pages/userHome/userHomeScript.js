@@ -6,14 +6,21 @@ import {todoRender} from './todoRender.js';
 import {handleNavBar} from './navbarHandler.js';
 import {popUpRender} from './popUpRender.js';
 
-
+let todoIndex = -1;
 let userIndex = 0;
-let todoIndex = 0;
 
 // Make the vp goto top
 function scrollToTop() {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
+// Verify if existe some to do to render on table, 
+// if not, do no shows table 
+// if yes, shows table
+function showTodoTable(){
+    document.getElementById('todo-first-message').classList.add('hidden');
+    document.getElementById('todo-table-wrapper').classList.remove('hidden');
 }
 
 // Create a new to do and saves on user db
@@ -46,6 +53,8 @@ function newToDo(e){
     scrollToTop();
 
     popUpRender('1');
+
+    showTodoTable();
 }
 
 // When pages loads, get current user and render his to do list
@@ -57,6 +66,8 @@ function onLoad(){
         todoRender(item, index);
         todoIndex = index;
     });
+
+    todoIndex !== -1 ? showTodoTable() : todoIndex = 0;
 
     popUpRender(getFlag());
     deleteFlag();

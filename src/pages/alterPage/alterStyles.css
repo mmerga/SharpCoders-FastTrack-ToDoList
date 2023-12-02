@@ -24,7 +24,7 @@ textarea{
 
 .todo-form-wrapper{
     width: 80%;
-    max-width: 800px;
+    /* max-width: 800px; */
     margin: 0 auto;
     font-size: 1.3rem;
     padding-top: 5rem;

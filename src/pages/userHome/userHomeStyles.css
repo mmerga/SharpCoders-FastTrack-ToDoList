@@ -11,6 +11,10 @@ body{
     /* text-shadow: 0px 0px 1px white; */
 }
 
+.hidden{
+    display: none !important;
+}
+
 .popup{
     position: fixed;
     top: 4rem;
@@ -76,8 +80,8 @@ header{
 
 .btn-logout:hover,
 .btn-logout:focus{
-    transform: scale(1.05);
-    border: 3px solid var(--green);
+    border-color:  var(--gren);
+    background-color: antiquewhite;
 }
 
 .todo-form-wrapper{
@@ -137,6 +141,19 @@ header{
 #todo-form-description:active,
 #todo-form-description:focus{
     background-color: var(--white);
+}
+
+.todo-first-message{
+    text-align: center;
+    font-size: 1.8rem;
+    font-style: italic;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-first-message p{
+    border-top: 1px solid var(--white);
 }
 
 .todo-table-wrapper{

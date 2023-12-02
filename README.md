@@ -12,4 +12,4 @@
 
 #### You can log in your account and create several to dos, of which you can update after.
 
-##### Create with just Html, Css, Js and Bootstrap.
+##### Created with just Html, Css, Js and Bootstrap.
